@@ -1,0 +1,58 @@
+import  guizero
+da  guizero  import  App , Text , TextBox , PushButton
+ stringa di importazione 
+importa  numpy  come  np
+importa  matplotlib . pyplot  come  plt
+
+
+f  =  open ( "dati.txt" , 'r' )
+
+coordX  = []
+coordY  = []
+
+def  bottone0 ():
+    per  riga  in  f :
+        valori  =  str ( riga )
+        Nval  =  len ( valori )
+        valori  =  valori . striscia ( ' \ n ' )
+        valori  =  valori . dividere ( ',' )
+        valori  =  list ( valori )
+        print ( valori )
+        coordX . append ( int ( valori [ 0 ]))
+        coordY . append ( int ( valori [ 1 ]))
+
+
+    print ( "X:" , coordX )
+    print ( "Y:" , coordY )
+
+
+    coordX . sort ()
+    coordY . sort ()
+
+    print ( "liste ordinate:" )
+    print ( "X:" , coordX )
+    print ( "Y:" , coordY )
+
+
+    print ( tipo ( coordX ))
+    print ( tipo ( coordY ))
+
+
+
+plt . trama ( coordX , coordY )
+plt . ylabel ( 'alcuni numeri' )
+plt . mostra ()
+
+app  =  App ( title = 'interfaccia' )
+
+hello_text  =  Text ( app , text = 'interfaccia' , font = 'Arial' , size = 40 )
+
+qualunque  =  TextBox ( app , larghezza = 30 , multiline = True , altezza = 2 )
+qualunque cosa . value = 'interfaccia / grafico'
+
+push  =  PushButton ( app , text = 'grafico' , command  =  bottone0 )
+spingere . larghezza = 8
+spingere . altezza = 3
+
+
+app . display ()
